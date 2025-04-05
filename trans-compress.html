@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="World's most accurate real-time translation and transcription tool supporting 1000+ languages with voice recognition capabilities.">
+    <meta name="keywords" content="translation, translator, transcription, voice to text, multilingual, language tool">
+    <meta name="author" content="Global Translate Pro">
+    <meta name="robots" content="index, follow">
+    <title>Global Translate Pro | 1000+ Language Translation & Transcription Tool</title>
+    <link rel="canonical" href="https://www.yourwebsite.com">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Global Translate Pro">
+    <meta property="og:description" content="World's most accurate real-time translation tool with voice recognition">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourwebsite.com">
+    <meta property="og:image" content="https://www.yourwebsite.com/images/global-translate-pro.jpg">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --light-color: #f8f9fa;
+            --dark-color: #202124;
+            --gray-color: #5f6368;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .ad-banner {
+            background-color: white;
+            padding: 15px;
+            margin: 20px auto;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+
+        .translation-tool {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .tool-header h2 {
+            color: var(--primary-color);
+        }
+
+        .language-selectors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .language-selector {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .language-selector label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--gray-color);
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-color);
+            pointer-events: none;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            appearance: none;
+            background-color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+        }
+
+        .swap-languages {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .swap-btn {
+            background-color: var(--light-color);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .swap-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .swap-btn i {
+            color: var(--gray-color);
+            font-size: 18px;
+        }
+
+        .text-areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .text-area-container {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .text-area-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .text-area-header h3 {
+            font-size: 18px;
+            color: var(--gray-color);
+        }
+
+        .voice-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .voice-btn {
+            background: none;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--gray-color);
+        }
+
+        .voice-btn:hover {
+            background-color: var(--light-color);
+        }
+
+        .voice-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .voice-btn i {
+            pointer-events: none;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            resize: vertical;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #3367d6;
+        }
+
+        .btn-secondary {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e0e0e0;
+        }
+
+        .features {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .feature-card p {
+            color: var(--gray-color);
+        }
+
+        .ad-sidebar {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #bdc1c6;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc1c6;
+            font-size: 14px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .language-selectors {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 15px;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .text-areas {
+                flex-direction: column;
+            }
+        }
+
+        /* Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Status indicator */
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .status-active {
+            background-color: var(--secondary-color);
+        }
+
+        .status-inactive {
+            background-color: var(--gray-color);
+        }
+
+        /* Loading spinner */
+        .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 14px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-language"></i>
+                    <span>Global Translate Pro</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#">Languages</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Translate & Transcribe in 1000+ Languages</h1>
+            <p>World's most accurate real-time translation and transcription tool with voice recognition capabilities. Break language barriers instantly.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="ad-banner">
+            <!-- Google AdSense Banner Ad -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+            <!-- Replace with your Ad Unit ID -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_BANNER_AD_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <div class="translation-tool">
+            <div class="tool-header">
+                <h2><i class="fas fa-exchange-alt"></i> Translation Tool</h2>
+                <div class="status">
+                    <span class="status-indicator status-active"></span>
+                    <span>Microphone Ready</span>
+                </div>
+            </div>
+
+            <div class="language-selectors">
+                <div class="language-selector">
+                    <label for="source-language">Source Language</label>
+                    <div class="select-wrapper">
+                        <select id="source-language">
+                            <option value="auto">Detect Language</option>
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="de">German</option>
+                            <option value="zh">Chinese</option>
+                            <option value="ja">Japanese</option>
+                            <option value="ru">Russian</option>
+                            <option value="ar">Arabic</option>
+                            <!-- More languages would be added here -->
+                            <option value="other">Other (1000+ languages supported)</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <div class="swap-languages">
+                    <button class="swap-btn" id="swapLanguages">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                </div>
+
+                <div class="language-selector">
+                    <label for="target-language">Target Language</label>
+                    <div class="select-wrapper">
+                        <select id="target-language">
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="de">German</option>
+                            <option value="zh">Chinese</option>
+                            <option value="ja">Japanese</option>
+                            <option value="ru">Russian</option>
+                            <option value="ar">Arabic</option>
+                            <!-- More languages would be added here -->
+                            <option value="other">Other (1000+ languages supported)</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-areas">
+                <div class="text-area-container">
+                    <div class="text-area-header">
+                        <h3>Original Text</h3>
+                        <div class="voice-controls">
+                            <button class="voice-btn tooltip" id="startSourceRecording">
+                                <i class="fas fa-microphone"></i>
+                                <span class="tooltiptext">Start Recording</span>
+                            </button>
+                            <button class="voice-btn tooltip" id="stopSourceRecording" disabled>
+                                <i class="fas fa-microphone-slash"></i>
+                                <span class="tooltiptext">Stop Recording</span>
+                            </button>
+                            <button class="voice-btn tooltip" id="clearSourceText">
+                                <i class="fas fa-trash-alt"></i>
+                                <span class="tooltiptext">Clear Text</span>
+                            </button>
+                        </div>
+                    </div>
+                    <textarea id="source-text" placeholder="Enter text or speak into the microphone..."></textarea>
+                    <div class="char-count">
+                        <span id="source-char-count">0</span> characters
+                    </div>
+                </div>
+
+                <div class="text-area-container">
+                    <div class="text-area-header">
+                        <h3>Translation</h3>
+                        <div class="voice-controls">
+                            <button class="voice-btn tooltip" id="playTranslation">
+                                <i class="fas fa-volume-up"></i>
+                                <span class="tooltiptext">Play Translation</span>
+                            </button>
+                            <button class="voice-btn tooltip" id="copyTranslation">
+                                <i class="fas fa-copy"></i>
+                                <span class="tooltiptext">Copy to Clipboard</span>
+                            </button>
+                        </div>
+                    </div>
+                    <textarea id="translated-text" placeholder="Translation will appear here..." readonly></textarea>
+                    <div class="char-count">
+                        <span id="translated-char-count">0</span> characters
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="translateBtn">
+                    <i class="fas fa-language"></i> Translate
+                    <div class="spinner" id="translateSpinner"></div>
+                </button>
+                <button class="btn btn-secondary" id="clearAllBtn">
+                    <i class="fas fa-broom"></i> Clear All
+                </button>
+            </div>
+        </div>
+
+        <div class="ad-sidebar">
+            <!-- Google AdSense Sidebar Ad -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+            <!-- Replace with your Ad Unit ID -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_SIDEBAR_AD_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <section class="features" id="features">
+            <div class="section-title">
+                <h2>Why Choose Global Translate Pro?</h2>
+                <p>Our advanced technology provides the most accurate translations and transcriptions available</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>1000+ Languages</h3>
+                    <p>Support for rare and general languages from around the world, including dialects and regional variations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3>Voice Transcription</h3>
+                    <p>Advanced speech recognition with 99%+ accuracy for real-time transcription in multiple languages.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered</h3>
+                    <p>Utilizes cutting-edge artificial intelligence to understand context and provide natural translations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Real-Time</h3>
+                    <p>Instant translations as you type or speak, with no noticeable delay for seamless communication.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Fully Responsive</h3>
+                    <p>Works perfectly on all devices from desktop computers to smartphones and tablets.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is never stored or shared, with end-to-end encryption for all translations.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="ad-banner">
+            <!-- Google AdSense Bottom Banner Ad -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+            <!-- Replace with your Ad Unit ID -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+                 data-ad-slot="YOUR_BOTTOM_BANNER_AD_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Global Translate Pro</h3>
+                    <p>Breaking language barriers with advanced AI technology to connect people worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#">Languages</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@globaltranslatepro.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Global Street, Internet City</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Global Translate Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('show');
+        });
+
+        // Language swap functionality
+        document.getElementById('swapLanguages').addEventListener('click', function() {
+            const sourceLang = document.getElementById('source-language');
+            const targetLang = document.getElementById('target-language');
+            const tempLang = sourceLang.value;
+            
+            sourceLang.value = targetLang.value;
+            targetLang.value = tempLang;
+            
+            // Also swap text areas if they have content
+            const sourceText = document.getElementById('source-text');
+            const translatedText = document.getElementById('translated-text');
+            
+            if (translatedText.value) {
+                const tempText = sourceText.value;
+                sourceText.value = translatedText.value;
+                translatedText.value = tempText;
+                
+                // Update character counts
+                updateCharCount(sourceText, 'source-char-count');
+                updateCharCount(translatedText, 'translated-char-count');
+            }
+        });
+
+        // Character count update
+        function updateCharCount(textarea, countElementId) {
+            document.getElementById(countElementId).textContent = textarea.value.length;
+        }
+
+        document.getElementById('source-text').addEventListener('input', function() {
+            updateCharCount(this, 'source-char-count');
+        });
+
+        document.getElementById('translated-text').addEventListener('input', function() {
+            updateCharCount(this, 'translated-char-count');
+        });
+
+        // Clear buttons functionality
+        document.getElementById('clearSourceText').addEventListener('click', function() {
+            document.getElementById('source-text').value = '';
+            document.getElementById('source-char-count').textContent = '0';
+        });
+
+        document.getElementById('clearAllBtn').addEventListener('click', function() {
+            document.getElementById('source-text').value = '';
+            document.getElementById('translated-text').value = '';
+            document.getElementById('source-char-count').textContent = '0';
+            document.getElementById('translated-char-count').textContent = '0';
+        });
+
+        // Copy translation button
+        document.getElementById('copyTranslation').addEventListener('click', function() {
+            const translatedText = document.getElementById('translated-text');
+            translatedText.select();
+            document.execCommand('copy');
+            
+            // Show feedback
+            const originalIcon = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i>';
+            setTimeout(() => {
+                this.innerHTML = originalIcon;
+            }, 2000);
+        });
+
+        // Voice recording functionality (simulated)
+        let isRecording = false;
+        const startRecordingBtn = document.getElementById('startSourceRecording');
+        const stopRecordingBtn = document.getElementById('stopSourceRecording');
+
+        startRecordingBtn.addEventListener('click', function() {
+            if (!isRecording) {
+                isRecording = true;
+                this.classList.add('active');
+                stopRecordingBtn.disabled = false;
+                
+                // Simulate recording
+                document.getElementById('source-text').placeholder = "Listening... speak now";
+                
+                // In a real implementation, this would use the Web Speech API
+                console.log("Recording started...");
+            }
+        });
+
+        stopRecordingBtn.addEventListener('click', function() {
+            if (isRecording) {
+                isRecording = false;
+                startRecordingBtn.classList.remove('active');
+                this.disabled = true;
+                document.getElementById('source-text').placeholder = "Enter text or speak into the microphone...";
+                
+                // Simulate transcription result
+                if (document.getElementById('source-text').value === '') {
+                    document.getElementById('source-text').value = "This is a simulated transcription result. In a real implementation, this would be the text from your voice input.";
+                    updateCharCount(document.getElementById('source-text'), 'source-char-count');
+                }
+                
+                console.log("Recording stopped");
+            }
+        });
+
+        // Play translation audio (simulated)
+        document.getElementById('playTranslation').addEventListener('click', function() {
+            const translatedText = document.getElementById('translated-text').value;
+            if (translatedText) {
+                // In a real implementation, this would use the Web Speech API to synthesize speech
+                console.log("Would play audio for:", translatedText);
+                alert("In a real implementation, this would play the audio of the translation.");
+            } else {
+                alert("No translation to play. Please translate some text first.");
+            }
+        });
+
+        // Translate button functionality (simulated)
+        document.getElementById('translateBtn').addEventListener('click', function() {
+            const sourceText = document.getElementById('source-text').value;
+            const sourceLang = document.getElementById('source-language').value;
+            const targetLang = document.getElementById('target-language').value;
+            
+            if (!sourceText.trim()) {
+                alert("Please enter some text to translate");
+                return;
+            }
+            
+            const spinner = document.getElementById('translateSpinner');
+            spinner.style.display = 'inline-block';
+            this.disabled = true;
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                // In a real implementation, this would call a translation API
+                const translations = {
+                    "en": {
+                        "es": "Este es un texto de ejemplo traducido al español.",
+                        "fr": "Ceci est un exemple de texte traduit en français.",
+                        "de": "Dies ist ein Beispieltext, der ins Deutsche übersetzt wurde."
+                    },
+                    "es": {
+                        "en": "This is an example text translated to English.",
+                        "fr": "Ceci est un exemple de texte traduit en français.",
+                        "de": "Dies ist ein Beispieltext, der ins Deutsche übersetzt wurde."
+                    }
+                    // More translations would be added here
+                };
+                
+                let translatedText;
+                
+                if (translations[sourceLang] && translations[sourceLang][targetLang]) {
+                    translatedText = translations[sourceLang][targetLang];
+                } else if (sourceLang === "auto") {
+                    // For "auto" detection, we'll just translate to the target language from English
+                    translatedText = translations["en"][targetLang] || "Translation not available for this language pair.";
+                } else {
+                    translatedText = "Translation not available for this language pair.";
+                }
+                
+                document.getElementById('translated-text').value = translatedText;
+                updateCharCount(document.getElementById('translated-text'), 'translated-char-count');
+                
+                spinner.style.display = 'none';
+                this.disabled = false;
+            }, 1500);
+        });
+
+        // Initialize character counts
+        updateCharCount(document.getElementById('source-text'), 'source-char-count');
+        updateCharCount(document.getElementById('translated-text'), 'translated-char-count');
+    </script>
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Global Translate Pro",
+      "url": "https://www.yourwebsite.com",
+      "description": "World's most accurate real-time translation and transcription tool supporting 1000+ languages with voice recognition capabilities.",
+      "applicationCategory": "Translator",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+</body>
+</html>
